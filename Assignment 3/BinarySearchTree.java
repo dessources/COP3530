@@ -134,23 +134,27 @@ public class BinarySearchTree {
      * Recursive implementation of method add(ElementType x).
      */
     private void add(ElementType x, Node p) {
-        if (cmp(x.word, p) == -1) {
+
+        int compareVal = cmp(x.word, p);
+        if (compareVal == -1) {
             if (p.getLeftChild() != null) {
+                add(x, p.getLeftChild());
+            } else {
                 Node newNode = new Node();
                 newNode.setNode(x, null, null);
                 p.setLeftChild(newNode);
-            } else
-                add(x, p.getLeftChild());
+            }
 
         } else {
             if (p.getRightChild() != null) {
+                add(x, p.getRightChild());
+            } else {
                 Node newNode = new Node();
                 newNode.setNode(x, null, null);
-                p.setRightChild(p);
-            } else
-                add(x, p.getRightChild());
-
+                p.setRightChild(newNode);
+            }
         }
+
     }
 
     /**
@@ -225,11 +229,11 @@ public class BinarySearchTree {
      */
     private boolean replace(String x, String y, Node p) {
         if (p != null) {
-            int compareVal = cmp(x, p.getLeftChild());
+            int compareVal = cmp(x, p);
             if (compareVal == 0) {
-                ElementType info = p.getLeftChild().getInfo();
+                ElementType info = p.getInfo();
                 info.meaning = y;
-                p.getLeftChild().setInfo(info);
+                p.setInfo(info);
                 return true;
             } else if (compareVal == 1)
                 return replace(x, y, p.getRightChild());

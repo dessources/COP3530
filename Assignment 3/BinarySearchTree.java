@@ -29,7 +29,9 @@ public class BinarySearchTree {
         if (!isEmpty()) {
             add(x, root.getLeftChild());
         } else {
-            root.getLeftChild().setNode(x, null, null);
+            Node newNode = new Node();
+            newNode.setNode(x, null, null);
+            root.setLeftChild(newNode);
         }
     }
 

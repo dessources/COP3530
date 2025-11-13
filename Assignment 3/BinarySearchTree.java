@@ -4,7 +4,7 @@
  * element consists of two components: word and meaning. The organization of the
  * tree is based on the word component.
  *
- * @author add here name, Panther ID, and class section of all authors
+ * @author Jaem Dessources Dit Dumesle, 6446727, U02
  */
 public class BinarySearchTree {
 

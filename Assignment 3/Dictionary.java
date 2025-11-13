@@ -8,7 +8,7 @@ import java.util.Scanner;
  * The dictionary stores words and their definitions. Precondition: all words
  * are distinct.
  *
- * @author add here name, Panther ID, and class section of all authors
+ * @author Jaem Dessources Dit Dumesle, 6446727, U02
  */
 public class Dictionary {
 
